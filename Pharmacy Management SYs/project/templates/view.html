@@ -1,0 +1,29 @@
+<!-- view.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('serve_static', filename='styles.css') }}">
+    <title>View Inventory</title>
+</head>
+<body>
+    <h1>Medicine Inventory</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Medicine Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        {% for medicine in medicines %}
+            <tr>
+                <td>{{ medicine[0] }}</td>
+                <td>{{ medicine[1] }}</td>
+                <td>{{ medicine[2] }}</td>
+                <td>{{ medicine[3] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

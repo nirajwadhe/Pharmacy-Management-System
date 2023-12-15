@@ -1,0 +1,22 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('serve_static', filename='styles.css') }}">
+
+    <title>Pharmacy Management System</title>
+</head>
+<body>
+    <h1 align = "center">Welcome to Pharmacy Management System</h1>
+    <p align = 'center'><b>Choose An Option From The Menu:</b></p>
+
+    <ul align = 'center' type = none>
+        <li><a href="{{ url_for('add') }}">Add Medicine to Inventory</a></li>
+        <li><a href="{{ url_for('view') }}">View Inventory</a></li>
+        <li><a href="{{ url_for('sell') }}">Sell Medicine</a></li>
+        <li><a href="{{ url_for('delete', name=medicine_name) }}">Delete {{ medicine_name }}</a></li>
+    </ul>
+</body>
+</html>
